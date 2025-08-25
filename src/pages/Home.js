@@ -9,7 +9,7 @@ function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://url-shorten-ptfc.onrender.com", {
+      const res = await axios.post("https://url-shorten-ptfc.onrender.com/api/shorten", {
         originalUrl: url,
       });
       setShortUrl(res.data.shortUrl);

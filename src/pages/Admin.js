@@ -6,7 +6,7 @@ function AdminPanel() {
   const [urls, setUrls] = useState([]);
 
   useEffect(() => {
-    axios.get("https://url-shorten-ptfc.onrender.com")
+    axios.get("https://url-shorten-ptfc.onrender.com/api/urls")
       .then(res => setUrls(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -32,11 +32,11 @@ function AdminPanel() {
                 <td>{url.originalUrl}</td>
                 <td>
                   <a
-                    href={`http://localhost:5000/${url.shortCode}`}
+                    href={`https://url-shorten-ptfc.onrender.com/${url.shortCode}`}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {`http://localhost:5000/${url.shortCode}`}
+                    {`https://url-shorten-ptfc.onrender.com/${url.shortCode}`}
                   </a>
                 </td>
                 <td>{url.clicks}</td>
@@ -45,7 +45,7 @@ function AdminPanel() {
                     variant="primary"
                     onClick={() => {
                       navigator.clipboard.writeText(
-                        `http://localhost:5000/${url.shortCode}`
+                        `https://url-shorten-ptfc.onrender.com/${url.shortCode}`
                       );
                       alert("Copied!");
                     }}
