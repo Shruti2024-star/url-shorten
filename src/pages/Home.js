@@ -22,6 +22,11 @@ function Home() {
     navigator.clipboard.writeText(shortUrl);
     alert("Copied to clipboard!");
   };
+  
+  const clearInput = () => {
+    setUrl("");
+    setShortUrl("");
+  };
 
   return (
     <div className="container mt-5">
@@ -37,6 +42,9 @@ function Home() {
           />
           <Button type="submit" variant="primary">
             Shorten
+          </Button>
+           <Button type="button" variant="secondary" onClick={clearInput}>
+            Clear
           </Button>
         </InputGroup>
       </Form>
