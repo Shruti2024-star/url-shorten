@@ -17,6 +17,7 @@ function AdminPanel() {
       {urls.length === 0 ? (
         <p className="text-center">No URLs found.</p>
       ) : (
+      <div className="table-responsive">
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -57,6 +58,7 @@ function AdminPanel() {
             ))}
           </tbody>
         </Table>
+      </div>
       )}
     </div>
   );
