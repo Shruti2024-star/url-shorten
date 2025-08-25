@@ -6,7 +6,7 @@ function AdminPanel() {
   const [urls, setUrls] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/urls")
+    axios.get("https://url-shorten-ptfc.onrender.com")
       .then(res => setUrls(res.data))
       .catch(err => console.error(err));
   }, []);
